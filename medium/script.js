@@ -1,7 +1,7 @@
 
 
 
-const cutPizzaSlices = a => `Each person gets ${8/a} slices of pizza`;
+const cutPizzaSlices = a => `Each person gets ${Math.round((8/a) * 100) / 100} slices of pizza`;
 
 // let sharePizza = cutPizzaSlices(3);
 
