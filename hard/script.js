@@ -1,21 +1,20 @@
 
 
-function privateInfo() {
+function outerFunction() {
     let pii = {
         name: "Carlo",
         ssn: "263421234"
     }
 
-    
-    
-    return function getName() {
-        console.log(pii.name);
+    function getName() {
+        return pii.name;
         
     }
+    
+    return getName
     
 }
 
 
-
-let getName = privateInfo()
-getName()
+let getName = outerFunction()
+let name = getName();

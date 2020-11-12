@@ -1,8 +1,4 @@
 
-
-
-
-
 const exercise = a => {
     return `Today's activity is ${a}.`
 }
