@@ -1,3 +1,4 @@
+//Person Constructor
 const Person = function (name, job, age) {
     this.name = name;
     this.job = job;
@@ -21,6 +22,7 @@ const Programmer = function (name, job, age, language) {
     Person.call(this, name, job, age)
     this.language = language;
     this.busy = true;
+    this.learnedLang = [language]
 }
 
 Programmer.prototype = Object.create(Person.prototype);
@@ -35,21 +37,29 @@ Programmer.prototype.acceptNewTask = function () {
     this.busy = true;
 }
 
-Programmer.prototype.offerNewTask = function () {
+Programmer.prototype.offerNewTask =  function () {
     console.log(this.busy ? `${this.name} can't accept any new tasks right now` : `${this.name} would love to take on a new responsibility.`)
 }
 
-Programmer.prototype.learnLanguage = () => {
-    
+Programmer.prototype.learnLanguage = function(a) {
+    this.learnedLang.push(a)
 }
 
-Programmer.prototype.listLanguages = () => {
-    
+Programmer.prototype.listLanguages = function () {
+    console.log(this.learnedLang)
 }
 
-let programmer = new Programmer("Bob", "Worker", 43, "java")
 
 
-programmer.learnLanguage("c#")
-console.log(programmer)
+let ted = new Programmer("Ted", "Worker", 43, "java")
+let fred = new Programmer("Fred", "Back-end developer", 25, "Javascript")
+
+ted.learnLanguage("js")
+ted.listLanguages()
+console.log(ted)
+fred.completeTask();
+console.log(fred)
+
+ted.offerNewTask();
+fred.offerNewTask();
 
