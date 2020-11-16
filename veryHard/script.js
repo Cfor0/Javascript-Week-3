@@ -54,7 +54,7 @@ Programmer.prototype.listLanguages = function () {
 let ted = new Programmer("Ted", "Worker", 43, "java")
 let fred = new Programmer("Fred", "Back-end developer", 25, "Javascript")
 
-ted.learnLanguage("js")
+ted.learnLanguage("python")
 ted.listLanguages()
 console.log(ted)
 fred.completeTask();
@@ -62,4 +62,4 @@ console.log(fred)
 
 ted.offerNewTask();
 fred.offerNewTask();
-
+fred.fetchJob()
